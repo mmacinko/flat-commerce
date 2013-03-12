@@ -1,0 +1,4 @@
+flat-commerce
+=============
+
+Magento theme
