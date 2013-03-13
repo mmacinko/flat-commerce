@@ -49,7 +49,8 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>mage/translate.js</script></action>
                 <action method="addJs"><script>mage/cookies.js</script></action>
 
-                <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/bootstrap-responsive.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/style.css</stylesheet></action>
 <!--                <action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>-->
 <!--                <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>-->
@@ -71,7 +72,7 @@ Default layout, loads most of the pages
                     <label>Navigation Bar</label>
                     <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml" />
                 </block>
-                <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
+<!--                <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>-->
                 <block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/html_wrapper" name="top.bar" as="topBar" translate="label">
                     <label>Breadcrumbs</label>
@@ -93,10 +94,13 @@ Default layout, loads most of the pages
 
             <block type="core/text_list" name="content" as="content" translate="label">
                 <label>Main Content Area</label>
+                <remove name="tags_popular"/>
             </block>
 
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>
+                <remove name="right.poll"/>
+                <remove name="paypal.partner.right.logo"/>
             </block>
 
             <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
