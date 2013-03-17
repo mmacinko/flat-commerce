@@ -48,6 +48,17 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>varien/menu.js</script></action>
                 <action method="addJs"><script>mage/translate.js</script></action>
                 <action method="addJs"><script>mage/cookies.js</script></action>
+                
+                <action method="addItem"><type>skin_js</type><name>js/jquery-1.8.2.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/no-conflict.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery-ui-1.10.0.custom.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.dropkick-1.0.0.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/custom_checkbox_and_radio.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/custom_radio.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.tagsinput.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/bootstrap-tooltip.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.placeholder.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/application.js</name></action>
 
                 <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/bootstrap-responsive.min.css</stylesheet></action>

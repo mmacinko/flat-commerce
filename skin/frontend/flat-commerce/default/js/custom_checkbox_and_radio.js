@@ -13,39 +13,39 @@ function setupLabel() {
     var radioDisabled = "disabled";
 
     // Checkboxes
-    if ($(checkBoxInput).length) {
-        $(checkBox).each(function(){
-            $(this).removeClass(checkBoxChecked);
+    if (jQuery(checkBoxInput).length) {
+        jQuery(checkBox).each(function(){
+            jQuery(this).removeClass(checkBoxChecked);
         });
-        $(checkBoxInput + ":checked").each(function(){
-            $(this).parent(checkBox).addClass(checkBoxChecked);
+        jQuery(checkBoxInput + ":checked").each(function(){
+            jQuery(this).parent(checkBox).addClass(checkBoxChecked);
         });
-        $(checkBoxInput + ":disabled").each(function(){
-            $(this).parent(checkBox).addClass(checkBoxDisabled);
+        jQuery(checkBoxInput + ":disabled").each(function(){
+            jQuery(this).parent(checkBox).addClass(checkBoxDisabled);
         });
     };
 
     // Radios
-    if ($(radioInput).length) {
-        $(radio).each(function(){
-            $(this).removeClass(radioOn);
+    if (jQuery(radioInput).length) {
+        jQuery(radio).each(function(){
+            jQuery(this).removeClass(radioOn);
         });
-        $(radioInput + ":checked").each(function(){
-            $(this).parent(radio).addClass(radioOn);
+        jQuery(radioInput + ":checked").each(function(){
+            jQuery(this).parent(radio).addClass(radioOn);
         });
-        $(radioInput + ":disabled").each(function(){
-            $(this).parent(radio).addClass(radioDisabled);
+        jQuery(radioInput + ":disabled").each(function(){
+            jQuery(this).parent(radio).addClass(radioDisabled);
         });
     };
 };
 
-$(document).ready(function(){
-    $("html").addClass("has-js");
+jQuery(document).ready(function(){
+    jQuery("html").addClass("has-js");
 
     // First let's prepend icons (needed for effects)
-    $(".checkbox, .radio").prepend("<span class='icon'></span><span class='icon-to-fade'></span>");
+    jQuery(".checkbox, .radio").prepend("<span class='icon'></span><span class='icon-to-fade'></span>");
 
-    $(".checkbox, .radio").click(function(){
+    jQuery(".checkbox, .radio").click(function(){
         setupLabel();
     });
     setupLabel();

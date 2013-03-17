@@ -1,24 +1,24 @@
 // Some general UI pack related JS
 
-$(function () {
+jQuery(function () {
     // Custom selects
-    $("select").dropkick();
+    jQuery("select").dropkick();
 });
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     // Todo list
-    $(".todo li").click(function() {
-        $(this).toggleClass("todo-done");
+    jQuery(".todo li").click(function() {
+        jQuery(this).toggleClass("todo-done");
     });
 
     // Init tooltips
-    $("[data-toggle=tooltip]").tooltip("show");
+    jQuery("[data-toggle=tooltip]").tooltip("show");
 
     // Init tags input
-    $("#tagsinput").tagsInput();
+    jQuery("#tagsinput").tagsInput();
 
     // Init jQuery UI slider
-    $("#slider").slider({
+    jQuery("#slider").slider({
         min: 1,
         max: 5,
         value: 2,
@@ -27,23 +27,23 @@ $(document).ready(function() {
     });
 
     // JS input/textarea placeholder
-    $("input, textarea").placeholder();
+    jQuery("input, textarea").placeholder();
 
     // Make pagination demo work
-    $(".pagination a").click(function() {
-        if (!$(this).parent().hasClass("previous") && !$(this).parent().hasClass("next")) {
-            $(this).parent().siblings("li").removeClass("active");
-            $(this).parent().addClass("active");
+    jQuery(".pagination a").click(function() {
+        if (!jQuery(this).parent().hasClass("previous") && !jQuery(this).parent().hasClass("next")) {
+            jQuery(this).parent().siblings("li").removeClass("active");
+            jQuery(this).parent().addClass("active");
         }
     });
 
-    $(".btn-group a").click(function() {
-        $(this).siblings().removeClass("active");
-        $(this).addClass("active");
+    jQuery(".btn-group a").click(function() {
+        jQuery(this).siblings().removeClass("active");
+        jQuery(this).addClass("active");
     });
 
     // Disable link click not scroll top
-    $("a[href='#']").click(function() {
+    jQuery("a[href='#']").click(function() {
         return false
     });
 
