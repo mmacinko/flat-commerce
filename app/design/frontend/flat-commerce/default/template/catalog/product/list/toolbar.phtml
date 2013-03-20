@@ -41,28 +41,23 @@
         <?php endif; ?>
     </p>
     
-    <div class="products-pager span3">
-        
+    <div class="products-pager btn-toolbar span3">
+        <?php echo $this->__('Show') ?>
         <div class="limiter btn-group">
-            <a href="#" class="btn disabled"><?php echo $this->__('Show') ?></a>
-<!--                <select onchange="setLocation(this.value)">-->
             <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
                 <a href="<?php echo $this->getLimitUrl($_key) ?>" title="<?php echo $_limit ?>" class="btn<?php echo ($this->isLimitCurrent($_key)) ? ' active' : '' ; ?>"><?php echo $_limit ?></a>
             <?php endforeach; ?>
-<!--                </select>-->
-            <a href="#" class="btn disabled"><?php echo $this->__('per page') ?></a>
         </div>
-
+        <?php echo $this->__('per page') ?>
         <?php echo $this->getPagerHtml() ?>
     </div>
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="sorter span5">
+    <div class="sorter btn-toolbar span4 offset1">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
             <?php $_modes = $this->getModes(); ?>
             <?php if($_modes && count($_modes)>1): ?>
-            <div class="btn-group">
-                <a href="#" class="btn disabled"><?php echo $this->__('View as') ?>:</a>
+            <div class="switcher btn-group">
                 <?php foreach ($this->getModes() as $_code=>$_label): ?>
                     <?php if($this->isModeActive($_code)): ?>
                         <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?> btn active"><i class="<?php echo (strtolower($_code)=='grid' ? ' icon-th' : ' icon-th-list'); ?> icon-white"> </i></a>
@@ -73,17 +68,16 @@
             </div>
             <?php endif; ?>
         <?php endif; ?>
-    
-        <div class="sort-by btn-group">
-            <a href="#" class="btn disabled"><?php echo $this->__('Sort By') ?></a>
-            <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
-                <a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" title="<?php echo $this->__($_order) ?>" class="btn<?php echo ($this->isOrderCurrent($_key)) ? ' active' : '' ; ?>"><?php echo $this->__($_order) ?></a>
-            <?php endforeach; ?>
-            <?php if($this->getCurrentDirection() == 'desc'): ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="btn"><i class="icon-arrow-up icon-white"> </i></a>
-            <?php else: ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="btn"><i class="icon-arrow-down icon-white"> </i></a>
-            <?php endif; ?>
+            <div class="sort-by btn-group">
+                <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                    <a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" title="<?php echo $this->__($_order) ?>" class="btn<?php echo ($this->isOrderCurrent($_key)) ? ' active' : '' ; ?>"><?php echo $this->__($_order) ?></a>
+                <?php endforeach; ?>
+                <?php if($this->getCurrentDirection() == 'desc'): ?>
+                    <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>" class="btn"><i class="icon-arrow-up icon-white"> </i></a>
+                <?php else: ?>
+                    <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>" class="btn"><i class="icon-arrow-down icon-white"> </i></a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
     <?php endif; ?>

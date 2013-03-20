@@ -27,29 +27,29 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-<div class="header-container">
-    <div class="quick-access span6 offset6">
-        <?php echo $this->getChildHtml('store_language') ?>
-        <?php echo $this->getChildHtml('topLinks') ?>
-    </div>
-    <div class="header row-fluid">
-        <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo span2">
-            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                <?php if ($this->getLogoSrc() != ''): ?>
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-                <?php else: ?>
-                <?php echo $this->getLogoAlt() ?>
-                <?php endif; ?>
-            </a>
-        </h1>
-        <?php /* <p class="welcome-msg"><?php echo $this->getWelcome()?></p> */ ?>
-        <?php else: ?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo span2"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif; ?>
+<div class="header-container clearfix">
+    <?php // if ($this->getIsHomePage()):?>
+    <h1 class="logo span2">
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+            <?php if ($this->getLogoSrc() != ''): ?>
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+            <?php else: ?>
+            <?php echo $this->getLogoAlt() ?>
+            <?php endif; ?>
+        </a>
+    </h1>
+    <?php /* <p class="welcome-msg"><?php echo $this->getWelcome()?></p> */ ?>
+    <?php /*else: ?>
+    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo span2"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+    <?php endif;*/ ?>
+    <div class="header span10">
+        <div class="quick-access">
+            <?php echo $this->getChildHtml('store_language') ?>
+            <?php echo $this->getChildHtml('topLinks') ?>
+        </div>
         <?php /* <p class="top-promo" title="<?php echo $this->__('Free Shipping on orders over 50$'); ?>"><?php echo $this->__('Free Shipping on orders over 50$'); ?></p> */ ?>
         <?php echo $this->getChildHtml('topMenu') ?>
     </div>
-    <?php echo $this->getChildHtml('topBar') ?>
-    <?php echo $this->getChildHtml('topContainer'); ?>
 </div>
+<?php echo $this->getChildHtml('topBar') ?>
+<?php echo $this->getChildHtml('topContainer'); ?>
